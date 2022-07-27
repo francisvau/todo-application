@@ -10,14 +10,14 @@
     <div class="interface">
         <header class="interface__header">
             <h2 class="header__title">TODO</h2>
-            <div class="header__theme"></div>
+            <div class="header__theme header__theme--light"></div>
         </header>
 
         <main class="interface__dashboard">
             <textarea class="dashboard__new-card" placeholder="Create a new todo..."></textarea>
             <section class="dashboard__tasks">
-                <div class="tasks__finished">Meditate for 10 minutes</div>
-                <div class="tasks__unfinished">Run for 30 minutes</div>
+                <div class="tasks__task tasks__task--finished">Meditate for 10 minutes</div>
+                <div class="tasks__task tasks__task--unfinished">Run for 30 minutes</div>
             </section>
             <div class="dashboard__tasks-info">
                 <p class="tasks-info__amount-left">5 tasks left</p>
@@ -30,5 +30,6 @@
             </div>
         </main>
     </div>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
