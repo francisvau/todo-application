@@ -48,6 +48,9 @@ function displayTasks() {
 }
 
 function createHtmlTask(task) {
-    return `<li><div class="tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}">
-    ${task["text"]}</div></li>`;
+    return `<li>
+    <i class="fi fi-br-${task["finished"] ? "check" : "circle"}"></i>
+    <div class="tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}">${task["text"]}</div>
+    <i class="fi fi-br-cross-circle"></i>
+    </li>`;
 }

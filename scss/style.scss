@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    display: flex;
+}
+
+.interface {
+    .interface__header {
+        text-align: center;
+    }
+
+    .interface__dashboard {
+        .dashboard__tasks {
+            background-color: red;
+        }
+    }
+}
