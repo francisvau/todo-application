@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    <div class="interface">
+        <header class="interface__header">
+            <h2 class="header__title">TODO</h2>
+            <div class="header__theme"></div>
+        </header>
+
+        <main class="interface__dashboard">
+            <textarea class="dashboard__new-card" placeholder="Create a new todo..."></textarea>
+            <section class="dashboard__tasks">
+                <div class="tasks__finished">Meditate for 10 minutes</div>
+                <div class="tasks__unfinished">Run for 30 minutes</div>
+            </section>
+            <div class="dashboard__tasks-info">
+                <p class="tasks-info__amount-left">5 tasks left</p>
+                <button class="tasks-info__finished">Clear finished</button>
+            </div>
+            <div class="dashboard__tasks-filter">
+                <button class="tasks-filter__all">All</button>
+                <button class="tasks-filter__active">Active</button>
+                <button class="tasks-filter__completed">Completed</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
