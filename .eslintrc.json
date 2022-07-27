@@ -5,9 +5,11 @@
         "es2021": true
     },
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
+        "no-unused-vars" : 1,
         "semi": [1, "always"]
     }
 }

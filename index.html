@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
+    <title>ToDo - Web Application</title>
 </head>
 <body>
     <div class="interface">
@@ -15,13 +15,17 @@
 
         <main class="interface__dashboard">
             <textarea class="dashboard__new-card" placeholder="Create a new todo..."></textarea>
-            <section class="dashboard__tasks">
-                <div class="tasks__task tasks__task--finished">Meditate for 10 minutes</div>
-                <div class="tasks__task tasks__task--unfinished">Run for 30 minutes</div>
-            </section>
+            <ul class="dashboard__tasks">
+                <li>
+                    <div class="tasks__task tasks__task--finished">Meditate for 10 minutes</div>
+                </li>
+                <li>
+                    <div class="tasks__task tasks__task--unfinished">Run for 30 minutes</div>
+                </li>
+            </ul>
             <div class="dashboard__tasks-info">
                 <p class="tasks-info__amount-left">5 tasks left</p>
-                <button class="tasks-info__finished">Clear finished</button>
+                <button class="tasks-info__clear-finished">Clear finished</button>
             </div>
             <div class="dashboard__tasks-filter">
                 <button class="tasks-filter__all">All</button>
