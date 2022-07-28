@@ -23,6 +23,12 @@ newCard.addEventListener("keyup", (event) => {
     }
 });
 
+clearFinished.addEventListener("click", () => {
+    todoList.clearFinished();
+    displayTasks();
+});
+
+
 function addTask() {
     const text = newCard.value.trim();
     if (text) {
@@ -43,14 +49,47 @@ function addTask() {
 function displayTasks() {
     tasks.innerHTML = "";
     for (const task of todoList.tasks) {
-        tasks.innerHTML += createHtmlTask(task);
+        tasks.appendChild(createHtmlTask(task));
     }
+    amountLeft.innerHTML = `${todoList.tasks.length} ${todoList.tasks.length === 1 ? "task" : "tasks"} left`;
 }
 
 function createHtmlTask(task) {
-    return `<li>
-    <i class="fi fi-br-${task["finished"] ? "check" : "circle"}"></i>
-    <div class="tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}">${task["text"]}</div>
-    <i class="fi fi-br-cross-circle"></i>
-    </li>`;
+
+    const div = document.createElement("div");
+
+    // finishedToggle
+    const finishedToggle = document.createElement("i");
+    updateFinishedToggle(finishedToggle, task);
+    finishedToggle.addEventListener("click", () => {
+        todoList.switchFinished(task);
+        updateFinishedToggle(finishedToggle, task);
+    });
+
+    // taskText
+    const taskText = document.createElement("div");
+    taskText.className = `tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}"`;
+    taskText.innerText = task["text"];
+
+    // deleteButton
+    const deleteButton = document.createElement("i");
+    deleteButton.className = "fi fi-br-cross-circle";
+    deleteButton.addEventListener("click", () => {
+        todoList.removeTask(task);
+        displayTasks();
+    });
+
+    // div
+    div.appendChild(finishedToggle);
+    div.appendChild(taskText);
+    div.appendChild(deleteButton);
+
+    //listItem
+    const listItem = document.createElement("li");
+    listItem.appendChild(div);
+    return listItem;
+}
+
+function updateFinishedToggle(finishedToggle, task) {
+    finishedToggle.className = `fi fi-br-${task["finished"] ? "check" : "circle"}`;
 }

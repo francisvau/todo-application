@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel="stylesheet" href="css/style.min.css">
     <title>ToDo - Web Application</title>
 </head>
@@ -13,16 +14,18 @@
     <div class="interface">
         <header class="interface__header">
             <h2 class="header__title">TODO</h2>
-            <div class="header__theme header__theme--light"></div>
+            <i class="header__theme fi fi-br-sun"></i>
         </header>
 
         <main class="interface__dashboard">
             <textarea class="dashboard__new-card" placeholder="Create a new todo..."></textarea>
             <ul class="dashboard__tasks">
                 <li>
-                    <i class="fi fi-br-check"></i>
-                    <div class="tasks__task tasks__task--finished">Sleep for 10 minutes</div>
-                    <i class="fi fi-br-cross-circle"></i>
+                    <div class="tasks__task">
+                        <i class="fi fi-br-check"></i>
+                        <p class="tasks__task tasks__task--finished">Sleep for 10 minutes</p>
+                        <i class="fi fi-br-cross-circle"></i>
+                    </div>
                 </li>
                 <li>
                     <div class="tasks__task tasks__task--unfinished">Run for 30 minutes</div>

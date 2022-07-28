@@ -9,10 +9,14 @@ export default class TodoList {
     }
 
     removeTask(task) {
-        this.tasks.remove(task);
+        this.tasks = this.tasks.filter(item => item !== task);
     }
 
     switchFinished(task) {
         task["finished"] = !task["finished"];
+    }
+
+    clearFinished() {
+        this.tasks = this.tasks.filter(task => !task["finished"]);
     }
 }

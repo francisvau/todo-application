@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,24 +7,73 @@
 }
 
 body {
+    color: #ddd;
+    font-family: "Fredoka One";
+    font-size: 20px;
+
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: url("../images/background-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 li {
-    display: flex;
+    list-style-type: none;
+    div {
+        display: flex;
+    }
 }
 
 .interface {
+
+    width: 600px;
+
     .interface__header {
-        text-align: center;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+
+        margin: 30px 0;
+        padding: 20px;
+        background: transparentize(#333, 0.2);
+        border-radius: 10px;
+
+        .header__title {
+            letter-spacing: 0.5em;
+            font-size: 50px;
+        }
+
+        .header__theme {
+            font-size: 40px;
+            padding-top: 8px;
+        }
     }
 
     .interface__dashboard {
+
+        .dashboard__new-card {
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            background: transparentize(#333, 0.2);
+        }
+
         .dashboard__tasks {
+            padding: 30px;
             background-color: red;
+
+            .tasks__task {
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 }
