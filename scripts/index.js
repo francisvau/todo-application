@@ -76,6 +76,8 @@ function addTask() {
         todoList.addTask(task);
 
         // Reset the filter to all
+        resetFilterClassNames();
+        filterAll.className = "tasks-filter__filter tasks-filter__filter--selected";
         filter = filters["ALL"];
 
         // Show the list of tasks
