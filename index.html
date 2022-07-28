@@ -21,10 +21,10 @@
             <textarea class="dashboard__new-card" placeholder="Create a new todo..."></textarea>
             <ul class="dashboard__tasks">
                 <li>
-                    <div class="tasks__task">
-                        <i class="fi fi-br-check"></i>
-                        <p class="tasks__task tasks__task--finished">Sleep for 10 minutes</p>
-                        <i class="fi fi-br-cross-circle"></i>
+                    <div class="tasks__task tasks__task--finished">
+                        <i class="task__finished-icon fi fi-br-check"></i>
+                        <p class="task__text">Sleep for 10 minutes</p>
+                        <i class="task__delete-icon fi fi-br-cross-circle"></i>
                     </div>
                 </li>
                 <li>
@@ -33,12 +33,12 @@
             </ul>
             <div class="dashboard__tasks-info">
                 <p class="tasks-info__amount-left">5 tasks left</p>
-                <button class="tasks-info__clear-finished">Clear finished</button>
+                <p class="tasks-info__clear-finished">Clear finished</p>
             </div>
             <div class="dashboard__tasks-filter">
-                <button class="tasks-filter__all">All</button>
-                <button class="tasks-filter__active">Active</button>
-                <button class="tasks-filter__completed">Completed</button>
+                <p class="tasks-filter__filter tasks-filter__filter--selected">all</p>
+                <p class="tasks-filter__filter">active</p>
+                <p class="tasks-filter__filter">completed</p>
             </div>
         </main>
     </div>

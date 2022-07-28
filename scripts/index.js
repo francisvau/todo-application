@@ -67,19 +67,20 @@ function createHtmlTask(task) {
     });
 
     // taskText
-    const taskText = document.createElement("div");
-    taskText.className = `tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}"`;
+    const taskText = document.createElement("p");
+    taskText.className = "task__text";
     taskText.innerText = task["text"];
 
     // deleteButton
     const deleteButton = document.createElement("i");
-    deleteButton.className = "fi fi-br-cross-circle";
+    deleteButton.className = "task__delete-icon fi fi-br-cross-circle";
     deleteButton.addEventListener("click", () => {
         todoList.removeTask(task);
         displayTasks();
     });
 
     // div
+    div.className = `tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}`;
     div.appendChild(finishedToggle);
     div.appendChild(taskText);
     div.appendChild(deleteButton);
@@ -91,5 +92,5 @@ function createHtmlTask(task) {
 }
 
 function updateFinishedToggle(finishedToggle, task) {
-    finishedToggle.className = `fi fi-br-${task["finished"] ? "check" : "circle"}`;
+    finishedToggle.className = `task__finished-icon fi fi-br-${task["finished"] ? "check" : "circle"}`;
 }

@@ -56,6 +56,11 @@ li {
 
     .interface__dashboard {
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
         .dashboard__new-card {
             width: 100%;
             border-radius: 10px;
@@ -64,15 +69,69 @@ li {
             font-family: inherit;
             font-size: inherit;
             background: transparentize(#333, 0.2);
+            border: none;
         }
 
         .dashboard__tasks {
-            padding: 30px;
-            background-color: red;
+            width: 100%;
+            background: transparentize(#333, 0.2);
+            border-radius: 10px;
+            margin: 10px 0;
 
             .tasks__task {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid white;
+                padding: 15px;
+
+                .task__text {
+                    justify-self: start;
+                }
+            }
+        }
+
+        .dashboard__tasks-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-top: 30px;
+
+            .tasks-info__clear-finished {
+                color:white;
+                background-color: transparentize(lime, 0.5);
+                border-radius: 10px;
+                padding: 10px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: transparentize(lime, 0.4);
+                }
+             }
+        }
+
+        .dashboard__tasks-filter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 60%;
+            margin-top: 30px;
+            background: transparentize(#333, 0.2);
+
+            .tasks-filter__filter {
+                padding: 10px;
+                letter-spacing: 1px;
+
+                &:hover {
+                    cursor: pointer;
+                    color: rgb(92, 92, 206);
+                }
+
+                &--selected {
+                    color: rgb(116, 116, 255);
+                }
             }
         }
     }
