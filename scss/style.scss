@@ -83,7 +83,16 @@ li {
                 justify-content: space-between;
                 align-items: center;
                 border-bottom: 1px solid white;
-                padding: 15px;
+                padding: 5px;
+
+                i {
+                    padding: 15px;
+                    border-radius: 10px;
+                    &:hover {
+                        background: transparentize(#212121, 0.2);
+                        cursor: pointer;
+                    }
+                }
 
                 .task__text {
                     justify-self: start;
