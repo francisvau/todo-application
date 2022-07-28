@@ -93,4 +93,7 @@ function createHtmlTask(task) {
 
 function updateFinishedToggle(finishedToggle, task) {
     finishedToggle.className = `task__finished-icon fi fi-br-${task["finished"] ? "check" : "circle"}`;
+    if (finishedToggle.parentElement) {
+        finishedToggle.parentElement.className = `tasks__task tasks__task--${task["finished"] ? "finished" : "unfinished"}`;
+    }
 }
