@@ -8,9 +8,17 @@ const tasks = document.querySelector(".dashboard__tasks");
 const amountLeft = document.querySelector(".tasks-info__amount-left");
 const clearFinished = document.querySelector(".tasks-info__clear-finished");
 
-const filterAll = document.querySelector(".tasks-filter__all");
-const filterActive = document.querySelector(".tasks-filter__active");
-const filterCompleted = document.querySelector(".tasks-filter__completed");
+const filterAll = document.querySelector("#filter-all");
+const filterActive = document.querySelector("#filter-active");
+const filterCompleted = document.querySelector("#filter-completed");
+
+const filters = {
+    // eslint-disable-next-line no-unused-vars
+    "ALL": (task) => true,
+    "ACTIVE": (task) => !task["finished"],
+    "COMPLETED": (task) => task["finished"]
+};
+let filter = filters["ALL"];
 
 const todoList = new TodoList();
 
@@ -28,6 +36,32 @@ clearFinished.addEventListener("click", () => {
     displayTasks();
 });
 
+filterAll.addEventListener("click", () => {
+    filter = filters["ALL"];
+    resetFilterClassNames();
+    filterAll.className = "tasks-filter__filter tasks-filter__filter--selected";
+    displayTasks();
+});
+
+filterActive.addEventListener("click", () => {
+    filter = filters["ACTIVE"];
+    resetFilterClassNames();
+    filterActive.className = "tasks-filter__filter tasks-filter__filter--selected";
+    displayTasks();
+});
+
+filterCompleted.addEventListener("click", () => {
+    filter = filters["COMPLETED"];
+    resetFilterClassNames();
+    filterCompleted.className = "tasks-filter__filter tasks-filter__filter--selected";
+    displayTasks();
+});
+
+function resetFilterClassNames() {
+    filterAll.className = "tasks-filter__filter";
+    filterActive.className = "tasks-filter__filter";
+    filterCompleted.className = "tasks-filter__filter";
+}
 
 function addTask() {
     const text = newCard.value.trim();
@@ -41,6 +75,9 @@ function addTask() {
         // Add the new task to the list
         todoList.addTask(task);
 
+        // Reset the filter to all
+        filter = filters["ALL"];
+
         // Show the list of tasks
         displayTasks();
     }
@@ -49,7 +86,9 @@ function addTask() {
 function displayTasks() {
     tasks.innerHTML = "";
     for (const task of todoList.tasks) {
-        tasks.appendChild(createHtmlTask(task));
+        if (filter(task)) {
+            tasks.appendChild(createHtmlTask(task));
+        }
     }
     amountLeft.innerHTML = `${todoList.tasks.length} ${todoList.tasks.length === 1 ? "task" : "tasks"} left`;
 }
